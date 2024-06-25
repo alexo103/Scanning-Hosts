@@ -1,16 +1,16 @@
 # Description
-Scanning Hosts is an open source tool which enables security professional to scan any size network to conduct passive reconnaissance on hosts. 
-The tool can scan an entire IP range (i.e 192.168.1.0/24) or can also be modified to scan just one IP (i.e. 192.168.1.200).
+Scanning Host is an open source tool which enables security professional to scan any network host to conduct passive reconnaissance on host. 
+The tool can scan an single IP (i.e 192.168.1.110) or can also be modified to scan an entire IP range (i.e. 192.168.1.0/24).
 # Modules
 •	Python-nmap
 # Installation
 	pip install python-nmap
 # How it works
-•	First, the script scans the network range provided. If the host is UP, return Host IP, Hostname, State, Open Ports	
+•	First, the script scans the network host provided. If the host is UP, return Host IP, Hostname, State, Open Ports, and Service running on port.	
 
-        def scan_network(network_range):
+        def scan_network(network_host):
             nm = nmap.PortScanner()
-            nm.scan(hosts=network_range, arguments='-sP')  # Ping scan
+            nm.scan(hosts=network_host, arguments='-sP')  # Ping scan
             results = []
             for host in nm.all_hosts():
                 if nm[host].state() == 'up':
@@ -23,7 +23,7 @@ The tool can scan an entire IP range (i.e 192.168.1.0/24) or can also be modifie
                     results.append(host_info)
             return results
 
-•	Next, from those Hosts identified as UP, scan open ports and return port number and service
+•	Next, scan for open ports and return port number and service
         
         def scan_open_ports(nm, host):
             nm.scan(hosts=host, arguments='-p 1-1024')  # Scan ports 1-1024
@@ -36,7 +36,7 @@ The tool can scan an entire IP range (i.e 192.168.1.0/24) or can also be modifie
                         open_ports.append((port, service))
             return open_ports
 
-•	Lastly, write the results of Scan on a config.txt files
+•	Lastly, write the results of Scan on a config.txt file
 
         def print_organized_results(results):
             with open('YourLocation/Config.txt', 'w') as file:
@@ -64,5 +64,6 @@ The tool can scan an entire IP range (i.e 192.168.1.0/24) or can also be modifie
           State: up
           Open Ports:
             Port: 80, Service: http
+	    Port: 443, Service: https
         ----------------------------------------
         ------------------------------------------------------------
