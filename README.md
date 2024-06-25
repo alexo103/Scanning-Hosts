@@ -39,8 +39,9 @@ The tool can scan an single IP (i.e 192.168.1.110) or can also be modified to sc
 •	Lastly, write the results of Scan on a config.txt file
 
         def print_organized_results(results):
-            with open('YourLocation/Config.txt', 'w') as file:
+            with open(r'C:YourLocation/Config.txt', 'a') as file:
                 file.write("Network Scan Results:\n")
+		file.write(f"Date:{datetime.datetime.now()}\n")
                 file.write("-" * 60 + "\n")
                 for result in results:
                     file.write(f"Host: {result['host']}\n")
@@ -58,6 +59,7 @@ The tool can scan an single IP (i.e 192.168.1.110) or can also be modified to sc
 •	Results
 
         Network Scan Results:
+	Date: 2024-06-21 22:30.14.208830
         ------------------------------------------------------------
         Host: 192.168.1.118
           Hostname: my_cool_PC
