@@ -58,15 +58,14 @@ The tool can scan an single IP (i.e 192.168.1.110) or can also be modified to sc
                 
 •	Results
 
-	Network Scan Results:
-	Date:2024-06-24 22:30:14.208830
-	------------------------------------------------------------
-	Host: 192.168.1.1
-  	  Hostname: 
-  	  State: up
-  	  Open Ports:
-    	     Port: 53, Service: domain
-             Port: 80, Service: http
-             Port: 443, Service: https
-	----------------------------------------
-	------------------------------------------------------------
+        Network Scan Results:
+        Date:2024-06-24 22:30:14.208830
+        ------------------------------------------------------------
+        Host: 192.168.1.1
+          Hostname: MY-COOL-PAC
+          State: up
+          Open Ports:
+            Port: 80, Service: http
+            Port: 443, Service: https
+        ----------------------------------------
+        ------------------------------------------------------------
