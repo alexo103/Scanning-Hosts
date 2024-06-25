@@ -4,5 +4,5 @@ The tool can scan an entire IP range (i.e 192.168.1.0/24) or can also be modifie
 # Modules
 •	Python-nmap
 # Installation
-	pip install pythong-nmap
+	pip install python-nmap
 
