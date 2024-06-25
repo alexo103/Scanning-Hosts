@@ -6,7 +6,7 @@ The tool can scan an single IP (i.e 192.168.1.110) or can also be modified to sc
 # Installation
 	pip install python-nmap
 # How it works
-•	First, the script scans the network host provided. If the host is UP, return Host IP, Hostname, State, Open Ports, and Service running on port.	
+•	First, the script scans the network host provided. If the host is UP, return Host IP, Hostname, State.	
 
         def scan_network(network_host):
             nm = nmap.PortScanner()
@@ -23,7 +23,7 @@ The tool can scan an single IP (i.e 192.168.1.110) or can also be modified to sc
                     results.append(host_info)
             return results
 
-•	Next, scan for open ports and return port number and service
+•	Next, scan for open ports and return port number and service for host that is UP.
         
         def scan_open_ports(nm, host):
             nm.scan(hosts=host, arguments='-p 1-1024')  # Scan ports 1-1024
