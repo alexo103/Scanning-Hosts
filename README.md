@@ -3,8 +3,9 @@ Scanning Host is an open source tool which enables security professional to scan
 The tool can scan an single IP (i.e 192.168.1.110) or can also be modified to scan an entire IP range (i.e. 192.168.1.0/24).
 # Modules
 •	Python-nmap
-# Installation
+# Dependencies Installation
 	pip install python-nmap
+ 	pip install datetime
 # How it works
 •	First, the script scans the network host provided. If the host is UP, return Host IP, Hostname, State.	
 
